@@ -1,0 +1,430 @@
+/* Estilos Globais */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+label {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+input[type="file"] {
+    margin: 0 15px;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para o Container dos Textos */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.column {
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: auto;
+}
+
+.column h2 {
+    margin-top: 0;
+}
+
+/* Estilos para as Células de Texto */
+.text-cell {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: left;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+/* Estilos para Botões Gerais */
+button {
+    margin: 5px;
+    padding: 8px 16px;
+    background-color: #063082;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+button:hover {
+    background-color: #4CAF50;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Estilos para Botões Iniciais dos Exercícios */
+.initial-exercise-btn {
+    background-color: #ff9800; /* Cor diferente para os botões iniciais */
+}
+
+.initial-exercise-btn:hover {
+    background-color: #e67e22;
+}
+
+/* Estilos para Botões Secundários (após terminar o exercício) */
+.secondary-exercise-btn {
+    background-color: #063082; /* Mesma cor dos botões gerais */
+}
+
+.secondary-exercise-btn:hover {
+    background-color: #4CAF50;
+}
+
+/* Estilos para Respostas Corretas e Incorretas no Ditado */
+.correct-answer {
+    border: 2px solid darkgreen;
+    background-color: #d4fdd4;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    color: green;
+    margin: 5px;
+}
+
+.correct-answer p {
+    margin: 0;
+    font-weight: bold;
+    color: darkgreen;
+}
+
+.feedback {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.wrong-answer {
+    border: 2px solid red;
+    background-color: #ffe6e6;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    color: red;
+    margin: 5px;
+}
+
+.wrong-answer .user-answer {
+    text-decoration: line-through;
+    color: #333;
+    margin: 5px 0;
+}
+
+.wrong-answer .correct-word {
+    color: blue;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+/* Estilos para o Container do Quiz */
+.quiz-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Estilos para Itens do Quiz */
+.quiz-item {
+    margin: 5px;
+    width: 200px;
+    text-align: center;
+    padding: 5px;
+}
+
+/* Estilos para Flashcards */
+.flashcard {
+    width: 160px;
+    height: 120px;
+    background-color: #fff;
+    border: 2px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    margin: 5px;
+    perspective: 1000px;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 5px;
+    flex-shrink: 0;
+}
+
+#flashcards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.flashcard-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flashcard.is-flipped .flashcard-inner {
+    transform: rotateY(180deg);
+}
+
+.flashcard-front,
+.flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    padding: 5px;
+    word-wrap: break-word;
+    text-align: center;
+    line-height: normal;
+    border-radius: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.flashcard-back {
+    background-color: #333;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* Estilos para Cores Alternadas dos Trechos de Texto */
+.even {
+    background-color: #ffffff; /* Branco */
+}
+
+.odd {
+    background-color: #f0f0f0; /* Cinza claro */
+}
+
+/* Estilos para Palavras Destacadas */
+.highlight {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+}
+
+.highlight::after {
+    content: attr(data-comment);
+    position: absolute;
+    bottom: 100%; /* Posiciona o tooltip acima do texto */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.75); /* Fundo semi-transparente */
+    color: #fff; /* Cor do texto do tooltip */
+    padding: 5px;
+    border-radius: 5px;
+    white-space: normal;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s;
+    z-index: 1;
+    width: 200px;
+    pointer-events: none;
+}
+
+.highlight:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Estilos para Inputs nos Exercícios */
+.exercise-item input[type="number"],
+.exercise-item input[type="range"] {
+    width: 60px;
+    margin: 0 5px;
+}
+
+.exercise-item label {
+    margin: 0 5px;
+}
+
+/* Estilos para o Container dos Exercícios */
+.exercise-container {
+    padding: 20px;
+}
+
+/* Estilos para Cada Item de Exercício */
+.exercise-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Ajustes para Título e Botões Iniciais */
+.exercise-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.exercise-header h2 {
+    margin: 0;
+    margin-right: 10px;
+}
+
+.exercise-header .initial-exercise-btn {
+    margin: 0 5px;
+}
+
+/* Ajustes para Inputs e Botões dentro dos Exercícios */
+.exercise-item label,
+.exercise-item input,
+.exercise-item button,
+.exercise-item select {
+    margin: 5px;
+}
+
+/* Estilos para os Botões que aparecem após o exercício */
+.exercise-footer {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.exercise-footer .secondary-exercise-btn {
+    margin: 5px;
+}
+
+/* Estilos para o Quiz de Pronúncia */
+.pronunciation-quiz-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pronunciation-quiz-item {
+    margin: 5px;
+    width: 200px;
+    text-align: center;
+    padding: 5px;
+}
+
+/* Estilos para Botões de Gravação */
+.record-button,
+.stop-button {
+    margin: 5px;
+    padding: 5px 10px;
+}
+
+/* Estilo para o Feedback da Prática de Pronúncia */
+.pronunciation-feedback {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+/* Estilos para o Exercício de Palavras */
+.word-quiz-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.word-quiz-item {
+    margin: 5px;
+    width: 200px;
+    text-align: center;
+    padding: 5px;
+}
+
+/* Estilos para os Botões dos Exercícios (Linha de Botões Principal) */
+.exercise-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.exercise-buttons .exercise-btn {
+    margin: 0 5px;
+    padding: 8px 16px;
+    background-color: #063082;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.exercise-buttons .exercise-btn:hover {
+    background-color: #4CAF50;
+    transform: scale(1.05);
+}
+
+.exercise-buttons .active-exercise {
+    background-color: #4CAF50;
+}
+
+/* Estilos para as Seções dos Exercícios */
+.exercise-section {
+    margin: 20px 0;
+}
+
+/* Estilos para Inputs e Botões nos Exercícios */
+.exercise-item input,
+.exercise-item button,
+.exercise-item label {
+    display: inline-block;
+}
+
+.exercise-item .answer-input {
+    width: 100px;
+}
+
+/* Ajuste para os botões que aparecem após o exercício */
+.exercise-footer button {
+    background-color: #063082;
+    color: white;
+}

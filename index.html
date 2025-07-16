@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudo de Idiomas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Italiano e Português</h1>
+        <label for="fileInputItalian">Carregar Texto em Italiano:</label>
+        <input type="file" id="fileInputItalian" accept=".txt">
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="column" id="italianColumn">
+                <h2>Texto em Italiano</h2>
+                <div id="italianText"></div>
+            </div>
+            <div class="column" id="portugueseColumn">
+                <h2>Tradução em Português</h2>
+                <div id="portugueseText"></div>
+            </div>
+        </div>
+
+        <!-- Linha com os botões dos exercícios -->
+        <div class="exercise-buttons">
+            <button class="exercise-btn" data-exercise="flashcards">Flashcards</button>
+            <button class="exercise-btn" data-exercise="dictation">Ditado</button>
+            <button class="exercise-btn" data-exercise="pronunciation">Prática de Pronúncia</button>
+            <button class="exercise-btn" data-exercise="word">Exercício de Palavras</button>
+        </div>
+
+        <!-- Seções dos exercícios -->
+        <div class="exercise-section" id="flashcards-section" style="display: none;">
+            <!-- Conteúdo dos Flashcards -->
+            <div class="exercise-item" id="flashcards-column">
+                <h2 id="flashcardTitle">Flashcards (0)</h2>
+                <button id="generateFlashcards" class="generate-flashcards-btn">Gerar Flashcards</button>
+                <button id="clearFlashcards" class="clear-flashcards-btn">Limpar Flashcards</button>
+                <div id="flashcards-container"></div>
+            </div>
+        </div>
+
+        <div class="exercise-section" id="dictation-section" style="display: none;">
+            <!-- Conteúdo do Ditado -->
+            <div class="exercise-item" id="dictation-column">
+                <h2>Ditado</h2>
+                <label for="dictationQuantity">Quantidade:</label>
+                <input type="number" id="dictationQuantity" min="1" value="0">
+                <input type="range" id="dictationSlider" min="1" value="0">
+                <div id="dictationMax">Máximo: 0</div>
+                <button id="startDictation" class="start-dictation-btn" disabled>Iniciar Ditado</button>
+                <div id="quiz"></div>
+                <button id="clearDictation" class="clear-dictation-btn" style="display:none;">Limpar Ditado</button>
+                <button id="newDictation" class="new-dictation-btn" style="display:none;">Novo Ditado</button>
+                <div id="scoreResult"></div>
+            </div>
+        </div>
+
+        <div class="exercise-section" id="pronunciation-section" style="display: none;">
+            <!-- Conteúdo da Prática de Pronúncia -->
+            <div class="exercise-item" id="pronunciation-column">
+                <h2>Prática de Pronúncia</h2>
+                <label for="pronunciationQuantity">Quantidade:</label>
+                <input type="number" id="pronunciationQuantity" min="1" value="0">
+                <input type="range" id="pronunciationSlider" min="1" value="0">
+                <div id="pronunciationMax">Máximo: 0</div>
+                <button id="startPronunciation" class="start-pronunciation-btn" disabled>Iniciar Prática</button>
+                <div id="pronunciationQuiz"></div>
+                <button id="clearPronunciation" class="clear-pronunciation-btn" style="display:none;">Limpar Prática</button>
+                <button id="newPronunciation" class="new-pronunciation-btn" style="display:none;">Nova Prática</button>
+            </div>
+        </div>
+
+        <div class="exercise-section" id="word-section" style="display: none;">
+            <!-- Conteúdo do Exercício de Palavras -->
+            <div class="exercise-item" id="word-exercise-column">
+                <h2>Exercício de Palavras</h2>
+                <label for="wordQuantity">Quantidade:</label>
+                <input type="number" id="wordQuantity" min="1" value="0">
+                <input type="range" id="wordSlider" min="1" value="0">
+                <div id="wordMax">Máximo: 0</div>
+                <button id="startWordExercise" class="start-word-btn" disabled>Iniciar</button>
+                <div id="wordQuiz"></div>
+                <button id="clearWord" class="clear-word-btn" style="display:none;">Limpar</button>
+                <button id="newWord" class="new-word-btn" style="display:none;">Novo Exercício</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
