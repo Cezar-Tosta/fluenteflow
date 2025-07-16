@@ -17,7 +17,7 @@ Este projeto é uma ferramenta interativa para auxiliar no **estudo de línguas 
 - 🖍️ Destaque visual no texto das palavras marcadas, com **tooltip** de tradução ao passar o mouse.
 - 🎯 Montagem automática de **listas de vocabulário** para exercícios interativos:
   - Flashcards (_reading_)
-  - Ditado (_listening__
+  - Ditado (_listening_)
   - Prática de pronúncia (_speaking_)
   - Exercício de palavras (_writing_)
 
