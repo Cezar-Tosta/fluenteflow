@@ -89,10 +89,12 @@ Sinta-se à vontade para abrir *issues*, propor *pull requests* ou sugerir melho
 
 - Tela Inicial
 <img src="imagens/tela_inicial.png" alt="Tela Inicial" width="800"/>
+
 - Destaque das palavras
 <img src="imagens/palavras.png" alt="Palavras" width="800"/>
 <img src="imagens/destaques.png" alt="Destaques" width="800"/>
 <img src="imagens/funcionalidades.png" alt="Funcionalidades" width="800"/>
+
 - Exercícios
 <img src="imagens/exercicios.png" alt="Exercícios" width="800"/>
 <img src="imagens/flashcards.png" alt="Flashcards" width="800"/>
