@@ -85,7 +85,7 @@ Sinta-se à vontade para abrir *issues*, propor *pull requests* ou sugerir melho
 
 ---
 
-## Imagens do Aplicativo Web
+## Imagens do Aplicativo
 
 - Tela Inicial
 <img src="imagens/tela_inicial.png" alt="Tela Inicial" width="800"/>
